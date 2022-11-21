@@ -1,0 +1,37 @@
+#!/bin/bash
+
+
+ for file in `ls -v *.out`;
+      do
+	    #  echo $file
+		# # echo src$1.c.out
+		#  break
+
+
+
+
+		if [ "src$1.c.out" == "$file" ];then
+              flag=1
+			  echo "flag=1"
+		fi
+		if [ "src$1.c.tmp" == "$file" ];then
+		       flag=1
+			   echo "flag=1"
+		fi
+
+		if [ "$flag" == 0 ];then
+		#  echo "flag=0"
+              continue
+		fi
+
+
+
+
+        # if [ $file ];then
+         echo -e "\n####"
+	     echo "$file"
+
+		./$file     
+      done
+
+
